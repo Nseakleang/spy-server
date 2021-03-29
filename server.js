@@ -34,6 +34,6 @@ io.on("connection", socket => {
 // start the server
 server.listen(port, err => {
     if(err) throw err;
-    console.log("%c Server running", "color: green");
+    console.log("Server running port: " + port);
 });
 // server.listen(port, () => console.log("server is running on port 80"));
