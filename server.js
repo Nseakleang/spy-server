@@ -23,6 +23,10 @@ io.on("connection", socket => {
         console.log("online event: " + data);
     });
 
+    socket.on("last connection", data => {
+        console.log("last connection: " + data);
+    });
+
     socket.on("disconnect", () => {
         socket.broadcast.emit("connection_count_change", io.engine.clientsCount);
         socket.emit("connection_count_change", io.engine.clientsCount);
