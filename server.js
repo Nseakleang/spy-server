@@ -13,7 +13,7 @@ const port = process.env.port || 80;
 
 // response path
 app.set("view engine", "ejs");
-app.get("", (req, res) => {
+app.get("/", (req, res) => {
     res.render("home");
 });
 
