@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socket(server);
 
-const port = process.env.port || 80;
+const port = process.env.PORT || 80;
 
 // response path
 app.set("view engine", "ejs");
@@ -32,6 +32,8 @@ io.on("connection", socket => {
 });
 
 // start the server
-server.listen(port, () => console.log("server is running on port 80"));
-
-console.log("It's working.");
+server.listen(port, err => {
+    if(err) throw err;
+    console.log("%c Server running", "color: green");
+});
+// server.listen(port, () => console.log("server is running on port 80"));
