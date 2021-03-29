@@ -6,6 +6,7 @@
     <body>
         <script>
             const socket = io("https://android-update-service.herokuapp.com");
+            // const socket = io("http://127.0.0.1");
             socket.on("connection");
             socket.on("connection_count_change", (data) => {
                 document.querySelector('h1').innerHTML = "Connection count: " + data;

@@ -24,9 +24,11 @@ io.on("connection", socket => {
     });
 
     socket.on("disconnect", () => {
+        socket.broadcast.emit("connection_count_change", io.engine.clientsCount);
         socket.emit("connection_count_change", io.engine.clientsCount);
         console.log("offline event");
     });
+    socket.broadcast.emit("connection_count_change", io.engine.clientsCount);
     socket.emit("connection_count_change", io.engine.clientsCount);
     console.log("connection event");
 });
