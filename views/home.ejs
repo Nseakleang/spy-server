@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"></script>
+    </head>
+    <body>
+        <script>
+            const socket = io("http://127.0.0.1:80");
+            socket.on("connection");
+            socket.on("connection_count_change", (data) => {
+                document.querySelector('h1').innerHTML = "Connection count: " + data;
+            });
+        </script>
+        <h1>Connection count: 0</h1>
+    </body>
+</html>
